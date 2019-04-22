@@ -2,16 +2,13 @@
 /* Header Files */
 #include <stdint.h>
 
-class strTestClass
+class TestClass
 {
 private:
-	uint8_t* m_StrPtr;
+	uint8_t m_length;
 
 public:
-	strTestClass(void);
-	strTestClass(const strTestClass& obj);
-	~strTestClass();
-	void setStringValue(uint8_t* str);
-	uint8_t* getStringValue(void);
-	void displayStringValue(strTestClass strObj);
+	TestClass(uint8_t len);
+	bool compare(TestClass obj);
+
 };

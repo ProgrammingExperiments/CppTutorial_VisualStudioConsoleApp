@@ -5,45 +5,19 @@
 
 using namespace std;
 
-strTestClass::strTestClass(void)
+TestClass::TestClass(uint8_t len)
 {
-	m_StrPtr = new uint8_t[6];
-	memset(m_StrPtr, '\0', 6);
-	cout << "Normal constructor allocated ptr" << endl;
+	m_length = len;
 }
 
-strTestClass::strTestClass(const strTestClass& obj)
+bool TestClass::compare(TestClass obj)
 {
-	m_StrPtr = new uint8_t[6];
-	memset(m_StrPtr, '\0', 6);
-
-	memcpy(m_StrPtr, obj.m_StrPtr, 5);
-
-	cout << "Copy constructor initialized new object" << endl;
-}
-
-void strTestClass::setStringValue(uint8_t* str)
-{
-	if (m_StrPtr != NULL && str != NULL)
+	if (this->m_length > obj.m_length)
 	{
-		memcpy(m_StrPtr, str, 5);
-		cout << "Set the string value" << endl;
+		return true;
 	}
-}
-
-uint8_t* strTestClass::getStringValue(void)
-{
-	return m_StrPtr;
-}
-
-void strTestClass::displayStringValue(strTestClass strObj)
-{
-	cout << "Display string value - " << strObj.m_StrPtr<<endl;
-}
-
-strTestClass::~strTestClass()
-{
-	delete[] m_StrPtr;
-
-	cout << "Destructor freed memory" << endl;
+	else
+	{
+		return false;
+	}
 }
