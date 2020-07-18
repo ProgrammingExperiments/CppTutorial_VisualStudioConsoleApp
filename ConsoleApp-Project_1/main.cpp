@@ -21,6 +21,11 @@ int main()
 	double_t y = 20.34232;
 	cout << "Sum of 2 doubles -> " << addNumbers(x, y) << endl;
 
+	class testClass tst;
+	tst.setVar(100);
+	cout << "Var value is  -> " << tst.getVar() << endl;
+
+
 	return 0;
 }
 
